@@ -130,4 +130,8 @@ public class UserService {
 
         return followers;
     }
+
+    public Integer getRating(Integer userId){
+        return usersAchievementsRepository.getRating(userId);
+    }
 }

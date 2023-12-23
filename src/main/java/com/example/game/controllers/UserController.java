@@ -62,6 +62,11 @@ public class UserController {
         return ResponseEntity.ok(followers);
     }
 
+    @GetMapping(value = "/{userId}/rating")
+    public ResponseEntity<Integer> getRating(@PathVariable("userId") Integer userId){
+        return ResponseEntity.ok(userService.getRating(userId));
+    }
+
     @PostMapping(value = "/{userId}/new-achievement/{achievementId}/{dateAchieved}")
     public ResponseEntity<String> setAchievement(@PathVariable("userId") Integer userId,
                                                  @PathVariable("achievementId") Integer achievementId,
